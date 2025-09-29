@@ -6,10 +6,10 @@ export default defineEventHandler((event) => {
   if (!import.meta.dev)
     return
 
+  const nitro = useNitroApp()
   const eventStream = createEventStream(event)
-  const nitroApp = useNitroApp()
 
-  const unregisterLogHook = nitroApp.hooks.hook('nitro:logs', async (logs) => {
+  const unregisterLogHook = nitro.hooks.hook('dev:logs', async (logs) => {
     await eventStream.push(stringify(logs))
   })
 
