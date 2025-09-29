@@ -14,6 +14,12 @@ importers:
       '@nuxt/kit':
         specifier: ^4.1.2
         version: 4.1.2(magicast@0.3.5)
+      consola:
+        specifier: ^3.4.2
+        version: 3.4.2
+      defu:
+        specifier: ^6.1.4
+        version: 6.1.4
       sirv:
         specifier: ^3.0.2
         version: 3.0.2
@@ -48,9 +54,6 @@ importers:
       changelogen:
         specifier: ^0.6.2
         version: 0.6.2(magicast@0.3.5)
-      consola:
-        specifier: ^3.4.2
-        version: 3.4.2
       eslint:
         specifier: ^9.36.0
         version: 9.36.0(jiti@2.6.0)
@@ -1249,6 +1252,9 @@ packages:
 
   '@types/node@24.5.2':
     resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
+
+  '@types/node@24.6.0':
+    resolution: {integrity: sha512-F1CBxgqwOMc4GKJ7eY22hWhBVQuMYTtqI8L0FcszYcpYX0fzfDGpez22Xau8Mgm7O9fI+zA/TYIdq3tGWfweBA==}
 
   '@types/parse-path@7.1.0':
     resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
@@ -4084,6 +4090,9 @@ packages:
   undici-types@7.12.0:
     resolution: {integrity: sha512-goOacqME2GYyOZZfb5Lgtu+1IDmAlAEu5xnD3+xTzS10hT0vzpf0SPjkXwAw9Jm+4n/mQGDP3LO8CPbYROeBfQ==}
 
+  undici-types@7.13.0:
+    resolution: {integrity: sha512-Ov2Rr9Sx+fRgagJ5AX0qvItZG/JKKoBRAVITs1zk7IqZGTJUwgUr7qoYBpWwakpWilTZFM98rG/AFRocu10iIQ==}
+
   unenv@2.0.0-rc.21:
     resolution: {integrity: sha512-Wj7/AMtE9MRnAXa6Su3Lk0LNCfqDYgfwVjwRFVum9U7wsto1imuHqk4kTm7Jni+5A0Hn7dttL6O/zjvUvoo+8A==}
 
@@ -5795,6 +5804,10 @@ snapshots:
   '@types/node@24.5.2':
     dependencies:
       undici-types: 7.12.0
+
+  '@types/node@24.6.0':
+    dependencies:
+      undici-types: 7.13.0
 
   '@types/parse-path@7.1.0':
     dependencies:
@@ -7621,7 +7634,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.5.2
+      '@types/node': 24.6.0
       merge-stream: 2.0.0
       supports-color: 8.1.1
 
@@ -9007,6 +9020,8 @@ snapshots:
       unplugin: 2.3.10
 
   undici-types@7.12.0: {}
+
+  undici-types@7.13.0: {}
 
   unenv@2.0.0-rc.21:
     dependencies:

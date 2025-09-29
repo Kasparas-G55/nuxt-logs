@@ -39,6 +39,8 @@
   "dependencies": {
     "@nuxt/devtools-kit": "^2.6.5",
     "@nuxt/kit": "^4.1.2",
+    "defu": "^6.1.4",
+    "consola": "^3.4.2",
     "sirv": "^3.0.2"
   },
   "devDependencies": {
@@ -52,7 +54,6 @@
     "@types/node": "latest",
     "@vueuse/core": "^13.9.0",
     "changelogen": "^0.6.2",
-    "consola": "^3.4.2",
     "eslint": "^9.36.0",
     "nuxt": "^4.1.2",
     "typescript": "~5.9.2",
