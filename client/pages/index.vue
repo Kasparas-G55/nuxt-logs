@@ -1,26 +1,25 @@
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { LogObject } from 'consola'
 import { parse } from 'devalue'
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 import LogItem from '../components/LogItem.vue'
 import { definePageMeta } from '#imports'
+import type { LogData } from '~/src/types'
 
 const client = useDevtoolsClient()
 
 definePageMeta({
   title: 'Logs',
-  category: 'analyze',
 })
 
-const logs = ref<Record<'server' | 'ssr', LogObject[]>>({
+const logs = ref<Record<'server' | 'ssr', LogData[]>>({
   server: [],
   ssr: [],
 })
 
 const eventSource = new EventSource('/_sse-logs')
 eventSource.onmessage = (event: MessageEvent<string>) => {
-  const log: LogObject = parse(event.data)
+  const log: LogData = parse(event.data)
   logs.value.server.unshift(log)
 }
 </script>
@@ -28,7 +27,7 @@ eventSource.onmessage = (event: MessageEvent<string>) => {
 <template>
   <NSectionBlock
     v-if="client"
-    icon="carbon-bare-metal-server"
+    icon="carbon:bare-metal-server"
     :description="`Total logs: ${logs.server.length}`"
     padding="py0!"
     header-class="font-sans"
@@ -39,7 +38,7 @@ eventSource.onmessage = (event: MessageEvent<string>) => {
       <LogItem
         v-for="(log, index) in logs.server"
         :key="index"
-        :log-object="log"
+        :log-object="log.logObject"
       />
     </template>
     <div
