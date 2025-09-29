@@ -1,8 +1,8 @@
 {
-  "name": "nuxt-logger",
+  "name": "nuxt-logs",
   "version": "1.0.0",
   "description": "Global Logger for Nuxt",
-  "repository": "Kasparas-G55/nuxt-logger",
+  "repository": "Kasparas-G55/nuxt-logs",
   "license": "MIT",
   "type": "module",
   "exports": {
@@ -23,31 +23,40 @@
     "dist"
   ],
   "scripts": {
-    "prepack": "nuxt-module-build build",
-    "dev": "npm run dev:prepare && nuxi dev playground",
-    "dev:build": "nuxi build playground",
-    "dev:prepare": "nuxt-module-build build --stub && nuxt-module-build prepare && nuxi prepare playground",
+    "prepack": "nuxt-module-build && npm run client:build",
+    "client:build": "nuxi generate client",
+    "client:dev": "nuxi dev client --port 3300",
+    "dev": "npm run play:dev",
+    "dev:prepare": "nuxt-module-build --stub && nuxi prepare client",
+    "prepare": "nuxi prepare client",
+    "play:dev": "nuxi dev playground",
+    "play:prod": "npm run prepack && nuxi dev playground",
     "release": "npm run lint && npm run test && npm run prepack && changelogen --release && npm publish && git push --follow-tags",
     "lint": "eslint .",
     "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:types": "vue-tsc --noEmit && cd playground && vue-tsc --noEmit"
+    "test:watch": "vitest watch"
   },
   "dependencies": {
-    "@nuxt/kit": "^4.1.2"
+    "@nuxt/devtools-kit": "^2.6.5",
+    "@nuxt/kit": "^4.1.2",
+    "sirv": "^3.0.2"
   },
   "devDependencies": {
+    "@iconify-json/carbon": "^1.2.13",
     "@nuxt/devtools": "^2.6.5",
+    "@nuxt/devtools-ui-kit": "^2.6.5",
     "@nuxt/eslint-config": "^1.9.0",
     "@nuxt/module-builder": "^1.0.2",
     "@nuxt/schema": "^4.1.2",
     "@nuxt/test-utils": "^3.19.2",
     "@types/node": "latest",
+    "@vueuse/core": "^13.9.0",
     "changelogen": "^0.6.2",
     "eslint": "^9.36.0",
     "nuxt": "^4.1.2",
     "typescript": "~5.9.2",
+    "unocss": "^66.5.2",
     "vitest": "^3.2.4",
-    "vue-tsc": "^3.0.8"
+    "vue-tsc": "^3.1.0"
   }
 }
