@@ -1,8 +1,6 @@
 export default defineEventHandler(() => {
   const { logger } = useNuxtLogger()
 
-  logger.level = Number.POSITIVE_INFINITY
-
   // Level NEGATIVE_INFINITY
   logger.silent('server silent')
 
