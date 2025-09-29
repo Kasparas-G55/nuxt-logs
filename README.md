@@ -2,83 +2,100 @@
 Get your module up and running quickly.
 
 Find and replace all on all files (CMD+SHIFT+F):
-- Name: My Module
+- Name: Nuxt Logs
 - Package name: nuxt-logs
 - Description: My new Nuxt module
 -->
 
-# My Module
+# Nuxt Logs
+
+> [!CAUTION]
+> Module is in early experimental stage, breaking changes will occur and it is not ready for production.
 
 [![npm version][npm-version-src]][npm-version-href]
 [![npm downloads][npm-downloads-src]][npm-downloads-href]
 [![License][license-src]][license-href]
 [![Nuxt][nuxt-src]][nuxt-href]
 
-My new Nuxt module for doing amazing things.
+## Progress
+
+- [ ] File path link to log call
+- [ ] Display SSR logs in Nuxt DevTools
+- [ ] Client-side logger.
+- [ ] Fancy Rich JSON rendering in Nuxt DevTools
+- [ ] Omitting a list of specified log levels on production build.
+
+> [!NOTE]
+> _Open for more suggestions on new features and appreciate any help on optimization/better methods of executing a feature_
 
 - [✨ &nbsp;Release Notes](/CHANGELOG.md)
-<!-- - [🏀 Online playground](https://stackblitz.com/github/your-org/nuxt-logs?file=playground%2Fapp.vue) -->
-<!-- - [📖 &nbsp;Documentation](https://example.com) -->
 
 ## Features
 
-<!-- Highlight some of the features your module provide here -->
-- ⛰ &nbsp;Foo
-- 🚠 &nbsp;Bar
-- 🌲 &nbsp;Baz
+- Using `consola` logger, sends logged messages back to Nuxt DevTools
+
+![logs](https://i.imgur.com/1yva1pZ.gif)
 
 ## Quick Setup
 
-Install the module to your Nuxt application with one command:
+1. Add `nuxt-logs` dependency to your project
 
 ```bash
-npx nuxi module add nuxt-logs
+# Using pnpm
+pnpm add -D nuxt-logs
+
+# Using yarn
+yarn add --dev nuxt-logs
+
+# Using npm
+npm install --save-dev nuxt-logs
+```
+
+2. Add `nuxt-logs` to the `modules` section of `nuxt.config.ts`
+
+```js
+export default defineNuxtConfig({
+  modules: [
+    'nuxt-logs'
+  ]
+})
 ```
 
 That's it! You can now use My Module in your Nuxt app ✨
 
+## Development
 
-## Contribution
+```bash
+# Install dependencies
+npm install
 
-<details>
-  <summary>Local development</summary>
+# Generate type stubs
+npm run dev:prepare
 
-  ```bash
-  # Install dependencies
-  npm install
+# Develop with playground, with devtools client ui
+npm run dev
 
-  # Generate type stubs
-  npm run dev:prepare
+# Develop with playground, with bundled client ui
+npm run play:prod
 
-  # Develop with the playground
-  npm run dev
+# Run ESLint
+npm run lint
 
-  # Build the playground
-  npm run dev:build
+# Run Vitest
+npm run test
+npm run test:watch
 
-  # Run ESLint
-  npm run lint
-
-  # Run Vitest
-  npm run test
-  npm run test:watch
-
-  # Release new version
-  npm run release
-  ```
-
-</details>
-
+# Release new version
+npm run release
+```
 
 <!-- Badges -->
+
 [npm-version-src]: https://img.shields.io/npm/v/nuxt-logs/latest.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-version-href]: https://npmjs.com/package/nuxt-logs
-
 [npm-downloads-src]: https://img.shields.io/npm/dm/nuxt-logs.svg?style=flat&colorA=020420&colorB=00DC82
 [npm-downloads-href]: https://npm.chart.dev/nuxt-logs
-
 [license-src]: https://img.shields.io/npm/l/nuxt-logs.svg?style=flat&colorA=020420&colorB=00DC82
 [license-href]: https://npmjs.com/package/nuxt-logs
-
 [nuxt-src]: https://img.shields.io/badge/Nuxt-020420?logo=nuxt.js
 [nuxt-href]: https://nuxt.com

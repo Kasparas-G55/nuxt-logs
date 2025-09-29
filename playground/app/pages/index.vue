@@ -9,9 +9,5 @@ async function test() {
     <button @click="test">
       TEST
     </button>
-    <NuxtLink
-      external
-      to="/_nuxt-logs"
-    >Logs</NuxtLink>
   </div>
 </template>
