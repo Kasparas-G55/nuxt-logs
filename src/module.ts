@@ -27,13 +27,12 @@ export default defineNuxtModule<ModuleOptions>({
       loggerOptions: _options.loggerOptions,
     })
 
-    // addImports({ name: 'useNuxtLogger', from: resolver.resolve('./loggers/app.ts') })
     addServerHandler({
       route: '/_sse-logs',
-      handler: resolver.resolve('./runtime/server/sse.ts'),
+      handler: resolver.resolve('./runtime/server/sse'),
     })
 
-    addServerImports({ name: 'useNuxtLogger', from: resolver.resolve('./runtime/logger.ts') })
+    addServerImports({ name: 'useNuxtLogger', from: resolver.resolve('./runtime/logger') })
 
     if (_options.devtools)
       setupDevToolsUI(_nuxt, resolver)
