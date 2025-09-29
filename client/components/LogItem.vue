@@ -3,15 +3,15 @@ import { formatDate } from '@vueuse/core'
 import type { LogObject, LogType } from 'consola'
 
 const typeColors: Partial<Record<LogType, string>> = {
-  error: 'text-red-400 bg-red/25',
-  warn: 'text-amber-400 bg-amber/25',
-  info: 'text-lightblue-400 bg-lightblue/25',
-  debug: 'text-blue-400 bg-blue/25',
-  start: 'text-purple-400 bg-purple/25',
-  success: 'text-green-400 bg-green/25',
-  ready: 'text-green-400 bg-green/25',
-  fatal: 'text-red-600 bg-red-600/25',
-  fail: 'text-red-400 bg-red-400/25',
+  error: 'text-red-400 bg-red/20',
+  warn: 'text-amber-400 bg-amber/20',
+  info: 'text-lightblue-400 bg-lightblue/20',
+  debug: 'text-blue-400 bg-blue/20',
+  start: 'text-purple-400 bg-purple/20',
+  success: 'text-green-400 bg-green/20',
+  ready: 'text-green-400 bg-green/20',
+  fatal: 'text-red-600 bg-red-600/20',
+  fail: 'text-red-400 bg-red-400/20',
   silent: 'text-dark bg-light-700',
 }
 
@@ -36,7 +36,7 @@ defineProps<{
       font-mono
     >
       <div>
-        <NBadge>
+        <NBadge v-if="logObject.tag">
           {{ logObject.tag }}
         </NBadge>
         <NBadge
