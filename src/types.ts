@@ -1,10 +1,10 @@
 import type { ModuleOptions } from './module'
 import type { LogObject } from 'consola'
-import type { ParsedTrace } from 'errx'
+import type { NullableMappedPosition } from 'source-map'
 
 export interface LogData {
   logObject: LogObject
-  stack?: ParsedTrace
+  stack?: NullableMappedPosition
 }
 
 declare module 'nuxt/schema' {

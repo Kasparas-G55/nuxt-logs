@@ -23,6 +23,9 @@ importers:
       sirv:
         specifier: ^3.0.2
         version: 3.0.2
+      source-map:
+        specifier: ^0.7.6
+        version: 0.7.6
     devDependencies:
       '@iconify-json/carbon':
         specifier: ^1.2.13
@@ -1253,8 +1256,8 @@ packages:
   '@types/node@24.5.2':
     resolution: {integrity: sha512-FYxk1I7wPv3K2XBaoyH2cTnocQEu8AOZ60hPbsyukMPLv5/5qr7V1i8PLHdl6Zf87I+xZXFvPCXYjiTFq+YSDQ==}
 
-  '@types/node@24.6.0':
-    resolution: {integrity: sha512-F1CBxgqwOMc4GKJ7eY22hWhBVQuMYTtqI8L0FcszYcpYX0fzfDGpez22Xau8Mgm7O9fI+zA/TYIdq3tGWfweBA==}
+  '@types/node@24.6.1':
+    resolution: {integrity: sha512-ljvjjs3DNXummeIaooB4cLBKg2U6SPI6Hjra/9rRIy7CpM0HpLtG9HptkMKAb4HYWy5S7HUvJEuWgr/y0U8SHw==}
 
   '@types/parse-path@7.1.0':
     resolution: {integrity: sha512-EULJ8LApcVEPbrfND0cRQqutIOdiIgJ1Mgrhpy755r14xMohPTEpkV/k28SJvuOs9bHRFW8x+KeDAEPiGQPB9Q==}
@@ -5805,7 +5808,7 @@ snapshots:
     dependencies:
       undici-types: 7.12.0
 
-  '@types/node@24.6.0':
+  '@types/node@24.6.1':
     dependencies:
       undici-types: 7.13.0
 
@@ -7634,7 +7637,7 @@ snapshots:
 
   jest-worker@27.5.1:
     dependencies:
-      '@types/node': 24.6.0
+      '@types/node': 24.6.1
       merge-stream: 2.0.0
       supports-color: 8.1.1
 

@@ -3,8 +3,7 @@ import { ref } from 'vue'
 import { parse } from 'devalue'
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 import LogItem from '../components/LogItem.vue'
-import { definePageMeta } from '#imports'
-import type { LogData } from '~/src/types'
+import type { LogData } from '../../src/types'
 
 const client = useDevtoolsClient()
 
@@ -18,9 +17,15 @@ const logs = ref<Record<'server' | 'ssr', LogData[]>>({
 })
 
 const eventSource = new EventSource('/_sse-logs')
+
 eventSource.onmessage = (event: MessageEvent<string>) => {
   const log: LogData = parse(event.data)
   logs.value.server.unshift(log)
+}
+
+eventSource.onerror = (ev) => {
+  console.log('[SSE Error]:', ev)
+  eventSource.close()
 }
 </script>
 
@@ -38,6 +43,7 @@ eventSource.onmessage = (event: MessageEvent<string>) => {
       <LogItem
         v-for="(log, index) in logs.server"
         :key="index"
+        :trace="log.stack"
         :log-object="log.logObject"
       />
     </template>
