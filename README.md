@@ -1,12 +1,3 @@
-<!--
-Get your module up and running quickly.
-
-Find and replace all on all files (CMD+SHIFT+F):
-- Name: Nuxt Logs
-- Package name: nuxt-logs
-- Description: My new Nuxt module
--->
-
 # Nuxt Logs
 
 > [!CAUTION]
