@@ -16,6 +16,10 @@ declare module 'nuxt/schema' {
 }
 
 declare module 'nitropack/types' {
+  interface NitroRuntimeConfig {
+    nuxtLogs: ModuleOptions
+  }
+
   interface NitroRuntimeHooks {
     'dev:logs': (log: LogData) => void
   }
