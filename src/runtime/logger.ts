@@ -44,7 +44,5 @@ export const useNuxtLogger = (tag?: string) => {
     },
   })
 
-  return {
-    logger,
-  }
+  return logger
 }

@@ -1,4 +1,13 @@
+import type { ConsolaInstance, LogObject } from 'consola'
 import type { ModuleOptions } from './module'
+import type { NullableMappedPosition } from 'source-map'
+
+declare function useNuxtLogger(tag?: string): ConsolaInstance
+
+interface LogData {
+  logObject: LogObject
+  trace?: NullableMappedPosition
+}
 
 declare module 'nuxt/schema' {
   interface RuntimeConfig {
@@ -12,4 +21,4 @@ declare module 'nitropack/types' {
   }
 }
 
-export {}
+export { useNuxtLogger }
