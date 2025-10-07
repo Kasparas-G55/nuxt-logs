@@ -3,7 +3,7 @@ import { ref } from 'vue'
 import { parse } from 'devalue'
 import { useDevtoolsClient } from '@nuxt/devtools-kit/iframe-client'
 import LogItem from '../components/LogItem.vue'
-import type { LogData } from '../../src/types'
+import type { LogData } from '~/types'
 
 const client = useDevtoolsClient()
 
@@ -43,7 +43,7 @@ eventSource.onerror = (ev) => {
       <LogItem
         v-for="(log, index) in logs.server"
         :key="index"
-        :trace="log.stack"
+        :trace="log.trace"
         :log-object="log.logObject"
       />
     </template>

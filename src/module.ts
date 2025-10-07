@@ -21,6 +21,10 @@ export default defineNuxtModule<ModuleOptions>({
   async setup(_options, _nuxt) {
     const resolver = createResolver(import.meta.url)
 
+    _nuxt.hook('prepare:types', ({ references }) => {
+      references.push({ path: resolver.resolve('./types.ts') })
+    })
+
     _options.loggerOptions.level = _nuxt.options.dev ? LogLevels['debug'] : LogLevels['warn']
 
     _nuxt.options.runtimeConfig.nuxtLogs = defu(_nuxt.options.runtimeConfig.nuxtLogs, {

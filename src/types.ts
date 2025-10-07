@@ -1,11 +1,4 @@
 import type { ModuleOptions } from './module'
-import type { LogObject } from 'consola'
-import type { NullableMappedPosition } from 'source-map'
-
-export interface LogData {
-  logObject: LogObject
-  stack?: NullableMappedPosition
-}
 
 declare module 'nuxt/schema' {
   interface RuntimeConfig {
@@ -18,3 +11,5 @@ declare module 'nitropack/types' {
     'dev:logs': (log: LogData) => void
   }
 }
+
+export {}

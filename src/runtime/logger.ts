@@ -27,7 +27,7 @@ export const useNuxtLogger = (tag?: string) => {
         null,
         async function (consumer) {
           const originalPath = consumer.originalPositionFor({
-            line: trace.line ?? 0,
+            line: trace?.line ?? 0,
             column: 0,
           })
 
@@ -40,7 +40,7 @@ export const useNuxtLogger = (tag?: string) => {
         },
       )
 
-      await nitro.hooks.callHook('dev:logs', { logObject, stack: absolutePath })
+      await nitro.hooks.callHook('dev:logs', { logObject, trace: absolutePath })
     },
   })
 
